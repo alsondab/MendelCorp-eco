@@ -117,25 +117,25 @@ const CheckoutForm = () => {
 
   const handlePlaceOrder = async () => {
     const res = await createOrder({
-      items,
-      shippingAddress,
-      expectedDeliveryDate: calculateFutureDate(
-        AVAILABLE_DELIVERY_DATES[deliveryDateIndex!].daysToDeliver
-      ),
-      deliveryDateIndex,
-      paymentMethod,
-      itemsPrice,
-      shippingPrice,
-      taxPrice,
-      totalPrice,
-    })
-    if (!res.success) {
-      toast.error(res.message)
-    } else {
-      toast.success(res.message)
-      clearCart()
-      router.push(`/checkout/${res.data?.orderId}`)
-    }
+        items,
+        shippingAddress,
+        expectedDeliveryDate: calculateFutureDate(
+          AVAILABLE_DELIVERY_DATES[deliveryDateIndex!].daysToDeliver
+        ),
+        deliveryDateIndex,
+        paymentMethod,
+        itemsPrice,
+        shippingPrice,
+        taxPrice,
+        totalPrice,
+      })
+      if (!res.success) {
+        toast.error(res.message)
+      } else {
+        toast.success(res.message)
+        clearCart()
+        router.push(`/checkout/${res.data?.orderId}`)
+      }
   }
   const handleSelectPaymentMethod = () => {
     setIsAddressSelected(true)

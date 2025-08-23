@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { Cart, OrderItem, ShippingAddress } from '@/types'
+import { Cart, OrderItem,ShippingAddress } from '@/types'
 import { calcDeliveryDateAndPrice } from '@/lib/actions/order.actions'
 
 const initialState: Cart = {
@@ -20,7 +20,7 @@ interface CartState {
   addItem: (item: OrderItem, quantity: number) => Promise<string>
   updateItem: (item: OrderItem, quantity: number) => Promise<void>
   removeItem: (item: OrderItem) => void
-
+  
   setShippingAddress: (shippingAddress: ShippingAddress) => Promise<void>
   setPaymentMethod: (paymentMethod: string) => void
   setDeliveryDateIndex: (index: number) => Promise<void>
@@ -68,8 +68,7 @@ const useCartStore = create(
             ...get().cart,
             items: updatedCartItems,
             ...(await calcDeliveryDateAndPrice({
-              items: updatedCartItems,
-              shippingAddress,
+              items: updatedCartItems,shippingAddress
             })),
           },
         })
@@ -83,7 +82,7 @@ const useCartStore = create(
         )?.clientId!
       },
       updateItem: async (item: OrderItem, quantity: number) => {
-        const { items, shippingAddress } = get().cart
+        const { items,shippingAddress } = get().cart
         const exist = items.find(
           (x) =>
             x.product === item.product &&
@@ -106,13 +105,13 @@ const useCartStore = create(
             items: updatedCartItems,
             ...(await calcDeliveryDateAndPrice({
               items: updatedCartItems,
-              shippingAddress,
+              shippingAddress
             })),
           },
         })
       },
       removeItem: async (item: OrderItem) => {
-        const { items, shippingAddress } = get().cart
+        const { items,shippingAddress } = get().cart
         const updatedCartItems = items.filter(
           (x) =>
             x.product !== item.product ||
@@ -126,7 +125,7 @@ const useCartStore = create(
             items: updatedCartItems,
             ...(await calcDeliveryDateAndPrice({
               items: updatedCartItems,
-              shippingAddress,
+              shippingAddress
             })),
           },
         })
@@ -154,7 +153,7 @@ const useCartStore = create(
       },
       setDeliveryDateIndex: async (index: number) => {
         const { items, shippingAddress } = get().cart
-
+  
         set({
           cart: {
             ...get().cart,
@@ -174,7 +173,7 @@ const useCartStore = create(
           },
         })
       },
-
+      
       init: () => set({ cart: initialState }),
     }),
     {

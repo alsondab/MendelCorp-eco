@@ -80,6 +80,9 @@ export default function PaymentMethodSelector({
                               </span>
                             )}
                           </div>
+                          <div className='text-xs text-gray-600 mt-1'>
+                            {method.description}
+                          </div>
                         </Label>
                       </div>
                     ))}
