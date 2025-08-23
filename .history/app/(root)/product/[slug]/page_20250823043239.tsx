@@ -61,7 +61,9 @@ export default async function ProductDetails(props: {
               <p className='p-medium-16 rounded-full bg-grey-500/10   text-grey-500'>
                 Brand {product.brand} {product.category}
               </p>
-              <h1 className='font-bold text-lg lg:text-xl'>{product.name}</h1>
+              <h1 className='font-bold text-lg lg:text-xl'>
+                {product.name}
+              </h1>
               <div className='flex items-center gap-2'>
                 <span>{product.avgRating.toFixed(1)}</span>
                 <Rating rating={product.avgRating} />
@@ -107,7 +109,9 @@ export default async function ProductDetails(props: {
                 {product.countInStock !== 0 ? (
                   <div className='text-green-700 text-xl'>In Stock</div>
                 ) : (
-                  <div className='text-destructive text-xl'>Out of Stock</div>
+                  <div className='text-destructive text-xl'>
+                    Out of Stock
+                  </div>
                 )}
               </CardContent>
             </Card>
@@ -122,8 +126,8 @@ export default async function ProductDetails(props: {
         />
       </section>
       <section>
-        <BrowsingHistoryList className='mt-10' />
-      </section>
+     <BrowsingHistoryList className='mt-10' />
+   </section>
     </div>
   )
 }

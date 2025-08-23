@@ -13,11 +13,11 @@ export default function AddToBrowsingHistory({
     // Ajouter le produit à l'historique quand la page se charge
     const currentProducts = [...browsingHistoryStore.getState().products]
     const index = currentProducts.findIndex((p) => p.id === product._id)
-
+    
     if (index !== -1) {
       currentProducts.splice(index, 1) // Remove duplicate if it exists
     }
-
+    
     currentProducts.unshift({
       id: product._id,
       category: product.category,
