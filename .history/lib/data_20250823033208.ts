@@ -207,7 +207,7 @@ const products: IProductInput[] = [
     category: 'Fire',
     brand: 'Kidde',
     images: ['/images/p21-1.jpg', '/images/p21-2.jpg'],
-    tags: ['best-seller', 'featured', 'todays-deal'],
+    tags: ['best-seller', 'featured'],
     isPublished: true,
     price: 45.99,
     listPrice: 59.99,

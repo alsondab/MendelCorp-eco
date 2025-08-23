@@ -85,19 +85,10 @@ export default async function Page() {
 
   return (
     <>
-   return (
-    <>
-      <HomeCarousel items={data.carousels} />
+      <HomeCarousel items={carousels} />
       <div className='md:p-4 md:space-y-4 bg-border'>
         <HomeCard cards={cards} />
-        <Card className='w-full rounded-none'>
-          <CardContent className='p-4 items-center gap-3'>
-            <ProductSlider title={"Today's Deals"} products={todaysDeals} />
-          </CardContent>
-        </Card>
       </div>
-    </>
-  )
     </>
   )
 }

@@ -11,6 +11,12 @@ import {
 
 export default async function Page() {
   const todaysDeals = await getProductsByTag({ tag: 'todays-deal' })
+  const categories = await getAllCategories()
+  const newArrivals = await getProductsByTag({ tag: 'new-arrival' })
+  const featureds = await getProductsByTag({ tag: 'featured' })
+  const bestSellers = await getProductsByTag({ tag: 'best-seller' })
+  const carousels = data.carousels
+  const cards = [
   const categories = [
     'Video Surveillance',
     'Fire',
@@ -85,19 +91,10 @@ export default async function Page() {
 
   return (
     <>
-   return (
-    <>
-      <HomeCarousel items={data.carousels} />
+      <HomeCarousel items={carousels} />
       <div className='md:p-4 md:space-y-4 bg-border'>
         <HomeCard cards={cards} />
-        <Card className='w-full rounded-none'>
-          <CardContent className='p-4 items-center gap-3'>
-            <ProductSlider title={"Today's Deals"} products={todaysDeals} />
-          </CardContent>
-        </Card>
       </div>
-    </>
-  )
     </>
   )
 }

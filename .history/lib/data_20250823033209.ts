@@ -204,7 +204,6 @@ const products: IProductInput[] = [
   {
     name: 'Kidde Fire Extinguisher 10-B:C',
     slug: toSlug('Kidde Fire Extinguisher 10-B:C'),
-    category: 'Fire',
     brand: 'Kidde',
     images: ['/images/p21-1.jpg', '/images/p21-2.jpg'],
     tags: ['best-seller', 'featured', 'todays-deal'],

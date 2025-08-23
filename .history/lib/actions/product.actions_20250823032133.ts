@@ -1,7 +1,7 @@
 'use server'
 
 import { connectToDatabase } from '@/lib/db'
-import Product, { IProduct } from '@/lib/db/models/product.model'
+import Product from '@/lib/db/models/product.model'
 
 export async function getAllCategories() {
   await connectToDatabase()
@@ -34,7 +34,6 @@ export async function getProductsForCard({
     image: string
   }[]
 }
-   // GET PRODUCTS BY TAG
 export async function getProductsByTag({
     tag,
     limit = 10,

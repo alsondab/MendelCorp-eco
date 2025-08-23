@@ -2,7 +2,6 @@
 
 import { connectToDatabase } from '@/lib/db'
 import Product, { IProduct } from '@/lib/db/models/product.model'
-
 export async function getAllCategories() {
   await connectToDatabase()
   const categories = await Product.find({ isPublished: true }).distinct(
@@ -35,6 +34,7 @@ export async function getProductsForCard({
   }[]
 }
    // GET PRODUCTS BY TAG
+
 export async function getProductsByTag({
     tag,
     limit = 10,
