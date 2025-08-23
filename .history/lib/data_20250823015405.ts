@@ -49,7 +49,7 @@ const data = {
           isPublished: true,
         },
         {
-          title: 'Best Deals on Video Surveillance',
+          title: 'Best Deals on Wrist Watches',
           buttonCaption: 'See More',
           image: '/images/banner2.jpg',
           url: '/search?category=Video Surveillance',

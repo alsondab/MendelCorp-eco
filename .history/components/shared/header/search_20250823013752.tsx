@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { APP_NAME } from '@/lib/constants'
 const categories = [
   'Video Surveillance',
   'Fire',

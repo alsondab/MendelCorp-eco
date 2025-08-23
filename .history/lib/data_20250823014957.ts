@@ -33,29 +33,7 @@ const data = {
         href: '/page/help',
       },
     ],
-    carousels: [
-        {
-          title: 'Most Popular Computer Equipment For Sale',
-          buttonCaption: 'Shop Now',
-          image: '/images/banner3.jpg',
-          url: '/search?category=Computer Equipment',
-          isPublished: true,
-        },
-        {
-          title: 'Best Sellers in Telephony',
-          buttonCaption: 'Shop Now',
-          image: '/images/banner1.jpg',
-          url: '/search?category=Telephony',
-          isPublished: true,
-        },
-        {
-          title: 'Best Deals on Video Surveillance',
-          buttonCaption: 'See More',
-          image: '/images/banner2.jpg',
-          url: '/search?category=Video Surveillance',
-          isPublished: true,
-        },
-      ],
+    
 
     
   }

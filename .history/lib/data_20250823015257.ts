@@ -35,21 +35,21 @@ const data = {
     ],
     carousels: [
         {
-          title: 'Most Popular Computer Equipment For Sale',
+          title: 'Most Popular Shoes For Sale',
           buttonCaption: 'Shop Now',
           image: '/images/banner3.jpg',
-          url: '/search?category=Computer Equipment',
+          url: '/search?category=security equipment',
           isPublished: true,
         },
         {
-          title: 'Best Sellers in Telephony',
+          title: 'Best Sellers in T-Shirts',
           buttonCaption: 'Shop Now',
           image: '/images/banner1.jpg',
-          url: '/search?category=Telephony',
+          url: '/search?category=computers',
           isPublished: true,
         },
         {
-          title: 'Best Deals on Video Surveillance',
+          title: 'Best Deals on Wrist Watches',
           buttonCaption: 'See More',
           image: '/images/banner2.jpg',
           url: '/search?category=Video Surveillance',

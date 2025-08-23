@@ -42,14 +42,14 @@ const data = {
           isPublished: true,
         },
         {
-          title: 'Best Sellers in Telephony',
+          title: 'Best Sellers in T-Shirts',
           buttonCaption: 'Shop Now',
           image: '/images/banner1.jpg',
           url: '/search?category=Telephony',
           isPublished: true,
         },
         {
-          title: 'Best Deals on Video Surveillance',
+          title: 'Best Deals on Wrist Watches',
           buttonCaption: 'See More',
           image: '/images/banner2.jpg',
           url: '/search?category=Video Surveillance',
