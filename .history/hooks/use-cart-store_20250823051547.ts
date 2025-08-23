@@ -18,7 +18,7 @@ interface CartState {
   cart: Cart
   addItem: (item: OrderItem, quantity: number) => Promise<string>
   updateItem: (item: OrderItem, quantity: number) => Promise<void>
-  removeItem: (item: OrderItem) => void
+        removeItem: (item: OrderItem) => void
 }
 
 const useCartStore = create(
@@ -74,53 +74,6 @@ const useCartStore = create(
             JSON.stringify(x.specifications) ===
               JSON.stringify(item.specifications)
         )?.clientId!
-      },
-      updateItem: async (item: OrderItem, quantity: number) => {
-        const { items } = get().cart
-        const exist = items.find(
-          (x) =>
-            x.product === item.product &&
-            x.color === item.color &&
-            JSON.stringify(x.specifications) ===
-              JSON.stringify(item.specifications)
-        )
-        if (!exist) return
-        const updatedCartItems = items.map((x) =>
-          x.product === item.product &&
-          x.color === item.color &&
-          JSON.stringify(x.specifications) ===
-            JSON.stringify(item.specifications)
-            ? { ...exist, quantity: quantity }
-            : x
-        )
-        set({
-          cart: {
-            ...get().cart,
-            items: updatedCartItems,
-            ...(await calcDeliveryDateAndPrice({
-              items: updatedCartItems,
-            })),
-          },
-        })
-      },
-      removeItem: async (item: OrderItem) => {
-        const { items } = get().cart
-        const updatedCartItems = items.filter(
-          (x) =>
-            x.product !== item.product ||
-            x.color !== item.color ||
-            JSON.stringify(x.specifications) !==
-              JSON.stringify(item.specifications)
-        )
-        set({
-          cart: {
-            ...get().cart,
-            items: updatedCartItems,
-            ...(await calcDeliveryDateAndPrice({
-              items: updatedCartItems,
-            })),
-          },
-        })
       },
       init: () => set({ cart: initialState }),
     }),

@@ -81,15 +81,13 @@ const useCartStore = create(
           (x) =>
             x.product === item.product &&
             x.color === item.color &&
-            JSON.stringify(x.specifications) ===
-              JSON.stringify(item.specifications)
+            x.size === item.size
         )
         if (!exist) return
         const updatedCartItems = items.map((x) =>
           x.product === item.product &&
           x.color === item.color &&
-          JSON.stringify(x.specifications) ===
-            JSON.stringify(item.specifications)
+          x.size === item.size
             ? { ...exist, quantity: quantity }
             : x
         )
@@ -109,8 +107,7 @@ const useCartStore = create(
           (x) =>
             x.product !== item.product ||
             x.color !== item.color ||
-            JSON.stringify(x.specifications) !==
-              JSON.stringify(item.specifications)
+            x.size !== item.size
         )
         set({
           cart: {
