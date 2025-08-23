@@ -305,7 +305,7 @@ const products: IProductInput[] = [
     slug: toSlug('Western Digital 2TB Internal Hard Drive'),
     category: 'Computer Equipment',
     brand: 'Western Digital',
-    images: ['/images/p24-1.jpg', '/images/p24-2.jpg'],
+    images: ['/images/hdd1-1.jpg', '/images/hdd1-2.jpg'],
     tags: ['best-seller'],
     isPublished: true,
     price: 59.99,

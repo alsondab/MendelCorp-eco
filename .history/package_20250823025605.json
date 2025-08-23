@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "seed": "npx tsx ./lib/db/seed.ts",
+
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",

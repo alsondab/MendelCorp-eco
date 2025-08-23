@@ -1,0 +1,1 @@
+export type IProductInput = z.infer<typeof ProductInputSchema>
