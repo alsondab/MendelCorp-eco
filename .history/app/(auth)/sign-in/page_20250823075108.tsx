@@ -39,10 +39,6 @@ export default async function SignIn(props: {
           <div>
             <CredentialsSignInForm />
           </div>
-          <SeparatorWithOr />
-            <div className='mt-4'>
-              <GoogleSignInForm />
-            </div>
         </CardContent>
       </Card>
       <SeparatorWithOr>New to {APP_NAME}?</SeparatorWithOr>

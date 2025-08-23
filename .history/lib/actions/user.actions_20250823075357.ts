@@ -16,7 +16,12 @@ export const SignOut = async () => {
   return redirectTo
 }
 export const SignInWithGoogle = async () => {
-  await signIn('google')
+  try {
+    const result = await signIn('google', { redirect: false })
+    return result
+  } catch (error) {
+    return { error: 'Failed to sign in with Google' }
+  }
 }
 // CREATE
 export async function registerUser(userSignUp: IUserSignUp) {
