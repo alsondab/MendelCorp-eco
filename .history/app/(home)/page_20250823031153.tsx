@@ -26,20 +26,15 @@ export default async function Page() {
         text: 'See More',
         href: '/search',
       },
-      items: categories.map((category, index) => ({
+      items: categories.map((category) => ({
         name: category,
-        image: [
-          '/images/jeans.jpg',
-          '/images/t-shirts.jpg',
-          '/images/shoes.jpg',
-          '/images/wrist-watches.jpg',
-        ][index],
+        image: `/images/${category.toLowerCase().replace(' ', '-')}.jpg`,
         href: `/search?category=${category}`,
       })),
     },
     {
       title: 'Explore New Arrivals',
-      items: newArrivals.map((product) => ({
+      items: newArrivals.map(product => ({
         name: product.name,
         image: product.images[0],
         href: `/product/${product.slug}`,
@@ -51,7 +46,7 @@ export default async function Page() {
     },
     {
       title: 'Discover Best Sellers',
-      items: bestSellers.map((product) => ({
+      items: bestSellers.map(product => ({
         name: product.name,
         image: product.images[0],
         href: `/product/${product.slug}`,
@@ -63,7 +58,7 @@ export default async function Page() {
     },
     {
       title: 'Featured Products',
-      items: featureds.map((product) => ({
+      items: featureds.map(product => ({
         name: product.name,
         image: product.images[0],
         href: `/product/${product.slug}`,

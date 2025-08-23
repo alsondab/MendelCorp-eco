@@ -26,14 +26,9 @@ export default async function Page() {
         text: 'See More',
         href: '/search',
       },
-      items: categories.map((category, index) => ({
+      items: categories.map((category) => ({
         name: category,
-        image: [
-          '/images/jeans.jpg',
-          '/images/t-shirts.jpg',
-          '/images/shoes.jpg',
-          '/images/wrist-watches.jpg',
-        ][index],
+        image: `/images/${category.toLowerCase().replace(' ', '-')}.jpg`,
         href: `/search?category=${category}`,
       })),
     },

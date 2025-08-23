@@ -28,12 +28,7 @@ export default async function Page() {
       },
       items: categories.map((category, index) => ({
         name: category,
-        image: [
-          '/images/jeans.jpg',
-          '/images/t-shirts.jpg',
-          '/images/shoes.jpg',
-          '/images/wrist-watches.jpg',
-        ][index],
+        image: ['/images/jeans.jpg', '/images/t-shirts.jpg', '/images/shoes.jpg', '/images/wrist-watches.jpg'][index],
         href: `/search?category=${category}`,
       })),
     },

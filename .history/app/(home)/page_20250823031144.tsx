@@ -26,24 +26,15 @@ export default async function Page() {
         text: 'See More',
         href: '/search',
       },
-      items: categories.map((category, index) => ({
+      items: categories.map((category) => ({
         name: category,
-        image: [
-          '/images/jeans.jpg',
-          '/images/t-shirts.jpg',
-          '/images/shoes.jpg',
-          '/images/wrist-watches.jpg',
-        ][index],
+        image: `/images/${toSlug(category)}.jpg`,
         href: `/search?category=${category}`,
       })),
     },
     {
       title: 'Explore New Arrivals',
-      items: newArrivals.map((product) => ({
-        name: product.name,
-        image: product.images[0],
-        href: `/product/${product.slug}`,
-      })),
+      items: newArrivals,
       link: {
         text: 'View All',
         href: '/search?tag=new-arrival',
@@ -51,26 +42,18 @@ export default async function Page() {
     },
     {
       title: 'Discover Best Sellers',
-      items: bestSellers.map((product) => ({
-        name: product.name,
-        image: product.images[0],
-        href: `/product/${product.slug}`,
-      })),
+      items: bestSellers,
       link: {
         text: 'View All',
-        href: '/search?tag=best-seller',
+        href: '/search?tag=new-arrival',
       },
     },
     {
       title: 'Featured Products',
-      items: featureds.map((product) => ({
-        name: product.name,
-        image: product.images[0],
-        href: `/product/${product.slug}`,
-      })),
+      items: featureds,
       link: {
         text: 'Shop Now',
-        href: '/search?tag=featured',
+        href: '/search?tag=new-arrival',
       },
     },
   ]
