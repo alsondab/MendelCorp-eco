@@ -1,0 +1,17 @@
+import { usePathname } from 'next/navigation'
+import useCartStore from './use-cart-store'
+
+const isNotInPaths = (s: string) =>
+  !/^\/$|^\/cart$|^\/checkout$|^\/sign-in$|^\/sign-up$|^\/order(\/.*)?$|^\/account(\/.*)?$|^\/admin(\/.*)?$/.test(
+    s
+  )
+function useCartSidebar() {
+  const {
+    cart: { items },
+  } = useCartStore()
+  const currentPath = usePathname()
+
+  return items.length > 0 && isNotInPaths(currentPath)
+}
+
+export default useCartSidebar

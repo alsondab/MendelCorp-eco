@@ -30,11 +30,10 @@ export default function CartButton() {
           </span>
         )}
         <span className='font-bold'>Cart</span>
-        {isMounted && isCartSidebarOpen && (
-          <div
-            className={`absolute top-[20px] right-[-16px] rotate-[-90deg] z-10 w-0 h-0 border-l-[7px] border-r-[7px] border-b-[8px] border-transparent border-b-background`}
-          ></div>
-        )}
+        isCartSidebarOpen && (
+    <div
+      className={`absolute top-[20px] right-[-16px] rotate-[-90deg] z-10 w-0 h-0 border-l-[7px] border-r-[7px] border-b-[8px] border-transparent border-b-background`}
+    ></div>    
       </div>
     </Link>
   )
