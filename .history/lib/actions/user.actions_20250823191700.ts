@@ -7,6 +7,7 @@ import { connectToDatabase } from '../db'
 import User from '../db/models/user.model'
 import { formatError } from '../utils'
 
+
 export async function signInWithCredentials(user: IUserSignIn) {
   return await signIn('credentials', { ...user, redirect: false })
 }

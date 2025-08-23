@@ -82,6 +82,8 @@ export default function OrderPaymentForm({
     }, 2000)
   }
 
+
+
   // Gestion du paiement à la livraison
   const handleCashOnDelivery = async () => {
     try {

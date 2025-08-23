@@ -82,6 +82,12 @@ export default function OrderPaymentForm({
     }, 2000)
   }
 
+  // Gestion de Stripe (à implémenter plus tard)
+  const handleStripePayment = async () => {
+    toast.info('Intégration Stripe en cours de développement...')
+    // Ici vous devrez implémenter l'intégration Stripe
+  }
+
   // Gestion du paiement à la livraison
   const handleCashOnDelivery = async () => {
     try {

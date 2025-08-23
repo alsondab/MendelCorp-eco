@@ -137,7 +137,7 @@ const CheckoutForm = () => {
     shippingAddressForm.setValue('postalCode', shippingAddress.postalCode)
     shippingAddressForm.setValue('province', shippingAddress.province)
     shippingAddressForm.setValue('phone', shippingAddress.phone)
-  }, [isMounted, shippingAddress, shippingAddressForm])
+  }, [items, isMounted, router, shippingAddress, shippingAddressForm])
 
   const [isAddressSelected, setIsAddressSelected] = useState<boolean>(false)
   const [isPaymentMethodSelected, setIsPaymentMethodSelected] =
