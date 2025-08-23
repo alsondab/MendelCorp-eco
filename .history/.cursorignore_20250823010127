@@ -1,0 +1,7 @@
+# Cursor ignore file
+# This file tells Cursor which files to ignore during indexing
+
+# Don't ignore environment files - allow Cursor to index them for autocomplete
+!.env*
+!.env.local
+!.env.example
