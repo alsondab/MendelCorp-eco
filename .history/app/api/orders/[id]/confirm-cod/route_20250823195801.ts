@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { connectToDatabase } from '@/lib/db'
 import Order from '@/lib/db/models/order.model'
+import User from '@/lib/db/models/user.model'
 import { sendPurchaseReceipt } from '@/emails'
 import { revalidatePath } from 'next/cache'
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { connectToDatabase } from '@/lib/db'
 import Order from '@/lib/db/models/order.model'
+import User from '@/lib/db/models/user.model'
 import { sendPurchaseReceipt } from '@/emails'
 import { revalidatePath } from 'next/cache'
 
@@ -10,10 +11,6 @@ export async function POST(
 ) {
   try {
     await connectToDatabase()
-    
-    // Forcer l'enregistrement de tous les modèles Mongoose
-    await import('@/lib/db/models')
-    
     const { id } = await params
 
     console.log('Confirmation de commande pour ID:', id)
