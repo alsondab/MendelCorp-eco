@@ -17,21 +17,22 @@ export const SignOut = async () => {
 }
 // CREATE
 export async function registerUser(userSignUp: IUserSignUp) {
-  try {
-    const user = await UserSignUpSchema.parseAsync({
-      name: userSignUp.name,
-      email: userSignUp.email,
-      password: userSignUp.password,
-      confirmPassword: userSignUp.confirmPassword,
-    })
-
-    await connectToDatabase()
-    await User.create({
-      ...user,
-      password: await bcrypt.hash(user.password, 5),
-    })
-    return { success: true, message: 'User created successfully' }
-  } catch (error) {
-    return { success: false, error: formatError(error) }
+    try {
+      const user = await UserSignUpSchema.parseAsync({
+        name: userSignUp.name,
+        email: userSignUp.email,
+        password: userSignUp.password,
+        confirmPassword: userSignUp.confirmPassword,
+      })
+  
+      await connectToDatabase()
+      await User.create({
+        ...user,
+        password: await bcrypt.hash(user.password, 5),
+      })
+      return { success: true, message: 'User created successfully' }
+    } catch (error) {
+      return { success: false, error: formatError(error) }
+    }
   }
-}
+  

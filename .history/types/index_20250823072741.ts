@@ -4,7 +4,6 @@ import {
   ProductInputSchema,
   UserInputSchema,
   UserSignInSchema,
-  UserSignUpSchema,
 } from '@/lib/validator'
 import z from 'zod'
 

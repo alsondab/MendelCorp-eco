@@ -50,12 +50,12 @@ export default function CredentialsSignInForm() {
         email: data.email,
         password: data.password,
       })
-
+      
       if (result?.error) {
         toast.error('Invalid email or password')
         return
       }
-
+      
       toast.success('Successfully signed in!')
       redirect(callbackUrl)
     } catch (error) {
