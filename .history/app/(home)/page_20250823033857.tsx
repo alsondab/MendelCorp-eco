@@ -3,7 +3,11 @@ import { HomeCarousel } from '@/components/shared/home/home-carousel'
 import data from '@/lib/data'
 import ProductSlider from '@/components/shared/product/product-slider'
 import { Card, CardContent } from '@/components/ui/card'
-import { getProductsByTag } from '@/lib/actions/product.actions'
+import {
+  getAllCategories,
+  getProductsByTag,
+  getProductsForCard,
+} from '@/lib/actions/product.actions'
 
 export default async function Page() {
   const todaysDeals = await getProductsByTag({ tag: 'todays-deal' })
@@ -82,28 +86,28 @@ export default async function Page() {
 
   return (
     <>
-      return (
-      <>
-        <HomeCarousel items={data.carousels} />
-        <div className='md:p-4 md:space-y-4 bg-border'>
-          <HomeCard cards={cards} />
-          <Card className='w-full rounded-none'>
-            <CardContent className='p-4 items-center gap-3'>
-              <ProductSlider title={"Today's Deals"} products={todaysDeals} />
-            </CardContent>
-          </Card>
-          <Card className='w-full rounded-none'>
-            <CardContent className='p-4 items-center gap-3'>
-              <ProductSlider
-                title='Best Selling Products'
-                products={bestSellingProducts}
-                hideDetails
-              />
-            </CardContent>
-          </Card>
-        </div>
-      </>
-      )
+   return (
+    <>
+      <HomeCarousel items={data.carousels} />
+      <div className='md:p-4 md:space-y-4 bg-border'>
+        <HomeCard cards={cards} />
+        <Card className='w-full rounded-none'>
+          <CardContent className='p-4 items-center gap-3'>
+            <ProductSlider title={"Today's Deals"} products={todaysDeals} />
+          </CardContent>
+        </Card>
+        <Card className='w-full rounded-none'>
+       <CardContent className='p-4 items-center gap-3'>
+         <ProductSlider
+           title='Best Selling Products'
+           products={bestSellingProducts}
+           hideDetails
+         />
+       </CardContent>
+     </Card>
+      </div>
+    </>
+  )
     </>
   )
 }
