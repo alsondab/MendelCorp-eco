@@ -111,7 +111,10 @@ export default async function ProductDetails(props: {
                 ) : (
                   <div className='text-destructive text-xl'>Out of Stock</div>
                 )}
-                 {product.countInStock !== 0 && (
+              </CardContent>
+            </Card>
+
+            {product.countInStock !== 0 && (
               <div className='flex justify-center items-center'>
                 <AddToCart
                   item={{
@@ -130,10 +133,6 @@ export default async function ProductDetails(props: {
                 />
               </div>
             )}
-              </CardContent>
-            </Card>
-
-           
           </div>
         </div>
       </section>

@@ -111,29 +111,29 @@ export default async function ProductDetails(props: {
                 ) : (
                   <div className='text-destructive text-xl'>Out of Stock</div>
                 )}
-                 {product.countInStock !== 0 && (
-              <div className='flex justify-center items-center'>
-                <AddToCart
-                  item={{
-                    clientId: generateId(),
-                    product: product._id,
-                    countInStock: product.countInStock,
-                    name: product.name,
-                    slug: product.slug,
-                    category: product.category,
-                    price: round2(product.price),
-                    quantity: 1,
-                    image: product.images[0],
-                    specifications: size ? [size] : product.specifications,
-                    color: color || product.colors[0],
-                  }}
-                />
-              </div>
-            )}
               </CardContent>
             </Card>
 
-           
+            {product.countInStock !== 0 && (
+  <div className='flex justify-center items-center'>
+    <AddToCart
+      item={{
+        clientId: generateId(),
+        product: product._id,
+        countInStock: product.countInStock,
+        name: product.name,
+        slug: product.slug,
+        category: product.category,
+        price: round2(product.price),
+        quantity: 1,
+        image: product.images[0],
+        specifications: size ? [size] : product.specifications,
+        color: color || product.colors[0],
+      }}
+    />
+  </div>
+)}
+
           </div>
         </div>
       </section>
