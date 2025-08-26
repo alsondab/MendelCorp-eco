@@ -4,13 +4,12 @@ import Product from './models/product.model'
 import { cwd } from 'process'
 import { loadEnvConfig } from '@next/env'
 import User from './models/user.model'
-import Review from './models/review.model'
 
 loadEnvConfig(cwd())
 
 const main = async () => {
   try {
-    const { products, users, reviews } = data
+    const { products, users } = data
     await connectToDatabase(process.env.MONGODB_URI)
     
     await User.deleteMany()
@@ -46,7 +45,6 @@ const main = async () => {
     console.log({
       createdProducts,
       createdUser,
-      createdReviews,
       message: 'Seeded database successfully',
     })
     process.exit(0)

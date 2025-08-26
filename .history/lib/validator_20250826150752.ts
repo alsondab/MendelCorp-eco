@@ -15,18 +15,20 @@ const Price = (field: string) =>
       `${field} must have exactly two decimal places (e.g., 49.99)`
     )
 
-    export const ReviewInputSchema = z.object({
-      product: MongoId,
-      user: MongoId,
-      isVerifiedPurchase: z.boolean(),
-      title: z.string().min(1, 'Title is required'),
-      comment: z.string().min(1, 'Comment is required'),
-      rating: z.coerce
-        .number()
-        .int()
-        .min(1, 'Rating must be at least 1')
-        .max(5, 'Rating must be at most 5'),
-    })
+    export type IReviewInput = z.infer<typeof ReviewInputSchema>
+export type IReviewDetails = IReviewInput & {
+  _id: string
+  createdAt: string
+  user: {
+    name: string
+  }
+}
+
+  reviews: {
+    title: string
+    rating: number
+    comment: string
+  }[]
 export const ProductInputSchema = z.object({
   name: z.string().min(3, 'Name must be at least 3 characters'),
   slug: z.string().min(3, 'Slug must be at least 3 characters'),
@@ -56,7 +58,7 @@ export const ProductInputSchema = z.object({
   ratingDistribution: z
     .array(z.object({ rating: z.number(), count: z.number() }))
     .max(5),
-  reviews: z.array(ReviewInputSchema).default([]),
+  reviews: z.array(z.string()).default([]),
   numSales: z.coerce
     .number()
     .int()

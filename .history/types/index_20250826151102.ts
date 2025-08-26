@@ -24,11 +24,6 @@ export type IProductInput = z.infer<typeof ProductInputSchema>
 export type Data = {
   users: IUserInput[]
   products: IProductInput[]
-  reviews: {
-    title: string
-    rating: number
-    comment: string
-  }[]
   headerMenus: {
     name: string
     href: string

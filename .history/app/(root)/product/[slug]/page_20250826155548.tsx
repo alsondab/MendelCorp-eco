@@ -14,8 +14,6 @@ import AddToBrowsingHistory from '@/components/shared/product/add-to-browsing-hi
 import AddToCart from '@/components/shared/product/add-to-cart'
 import { generateId, round2 } from '@/lib/utils'
 import RatingSummary from '@/components/shared/product/rating-summary'
-import ReviewList from './review-list'
-import { auth } from '@/auth'
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
 }) {
@@ -49,7 +47,6 @@ export default async function ProductDetails(props: {
     productId: product._id,
     page: Number(page || '1'),
   })
-  const session = await auth()
 
   return (
     <div>

@@ -749,6 +749,7 @@ const data: Data = {
       isPublished: true,
     },
   ],
+  products,
 }
 
 export default data

@@ -690,7 +690,7 @@ const users: IUserInput[] = [
 
 const data: Data = {
   users,
-  products,
+  
   reviews,
   headerMenus: [
     {
@@ -749,6 +749,7 @@ const data: Data = {
       isPublished: true,
     },
   ],
+  products,
 }
 
 export default data

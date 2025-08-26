@@ -338,7 +338,7 @@ const products: IProductInput[] = [
   },
 ]
 
-const reviews = [
+const reviews: IReviewInput[] = [
   {
     rating: 1,
     title: 'Poor quality',
@@ -690,7 +690,6 @@ const users: IUserInput[] = [
 
 const data: Data = {
   users,
-  products,
   reviews,
   headerMenus: [
     {
@@ -749,6 +748,7 @@ const data: Data = {
       isPublished: true,
     },
   ],
+  products,
 }
 
 export default data
