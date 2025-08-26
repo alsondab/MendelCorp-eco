@@ -8,7 +8,6 @@ import {
   UserSignUpSchema,
   OrderInputSchema,
   ReviewInputSchema,
-  UserNameSchema,
 } from '@/lib/validator'
 import z from 'zod'
 
