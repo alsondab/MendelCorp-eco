@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import qs from 'query-string'
+import qs from 'qs'
 
 export function formUrlQuery({
   params,
