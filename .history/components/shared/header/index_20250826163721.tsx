@@ -8,8 +8,7 @@ import { getAllCategories } from '@/lib/actions/product.actions'
 import data from '@/lib/data'
 import Search from './search'
 
-export default async function Header() {
-  const categories = await getAllCategories()
+export default function Header() {
   return (
     <header className='bg-black  text-white'>
       <div className='px-2'>
@@ -39,7 +38,7 @@ export default async function Header() {
         </div>
       </div>
       <div className='flex items-center px-3 mb-[1px]  bg-gray-800'>
-        <Sidebar categories={categories} />
+      <Sidebar categories={categories} />
 
         <div className='flex items-center flex-wrap gap-3 overflow-hidden   max-h-[42px]'>
           {data.headerMenus.map((menu) => (

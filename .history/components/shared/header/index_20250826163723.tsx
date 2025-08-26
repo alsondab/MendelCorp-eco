@@ -8,8 +8,7 @@ import { getAllCategories } from '@/lib/actions/product.actions'
 import data from '@/lib/data'
 import Search from './search'
 
-export default async function Header() {
-  const categories = await getAllCategories()
+export default function Header() {
   return (
     <header className='bg-black  text-white'>
       <div className='px-2'>
