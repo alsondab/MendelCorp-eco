@@ -9,9 +9,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-
+const categories = [
+  'Video Surveillance',
+  'Fire',
+  'Telephony',
+  'Computer Equipment',
+]
 export default async function Search() {
-  const categories = await getAllCategories()
   return (
     <form
       action='/search'

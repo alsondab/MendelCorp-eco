@@ -9,9 +9,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-
+const categories = await getAllCategories()
 export default async function Search() {
-  const categories = await getAllCategories()
   return (
     <form
       action='/search'

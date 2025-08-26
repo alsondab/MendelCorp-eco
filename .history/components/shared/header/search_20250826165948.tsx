@@ -12,6 +12,7 @@ import {
 
 export default async function Search() {
   const categories = await getAllCategories()
+
   return (
     <form
       action='/search'

@@ -1,7 +1,6 @@
 import { SearchIcon } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { getAllCategories } from '@/lib/actions/product.actions'
-
 import {
   Select,
   SelectContent,
@@ -9,9 +8,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-
+const categories = [
+  'Video Surveillance',
+  'Fire',
+  'Telephony',
+  'Computer Equipment',
+]
 export default async function Search() {
-  const categories = await getAllCategories()
   return (
     <form
       action='/search'
